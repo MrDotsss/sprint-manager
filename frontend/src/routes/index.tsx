@@ -1,4 +1,4 @@
-import { HomeNavbar } from "@/components/home-navbar"
+import { Navbar } from "@/components/navbar"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({
@@ -9,7 +9,7 @@ function Index() {
   return (
     <div>
       <header>
-        <HomeNavbar />
+        <Navbar />
       </header>
       <main>hello home</main>
     </div>

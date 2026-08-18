@@ -5,8 +5,14 @@ import "./index.css"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
 import { RouterProvider, createRouter } from "@tanstack/react-router"
 import { routeTree } from "./routeTree.gen"
+import { LoadingDialog } from "./components/loading-dialog"
 
-const router = createRouter({ routeTree })
+const router = createRouter({
+  routeTree,
+  defaultPendingComponent: () => (
+    <LoadingDialog open={true} message="Processing request." />
+  ),
+})
 
 declare module "@tanstack/react-router" {
   interface Register {
